@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div id="div-01">Here is div-01</div>
+  <div id="div-02">Here is div-02</div>
+  <div id="div-03">Here is div-02</div>
+
+  <script type="text/javascript">
+    var el = document.getElementById("div-01").nextSibling
+
+    var i = 1;
+    while (el) {
+      console.log(i + ". " + el.nodeName);
+      el = el.nextSibling;
+      i++;
+    }
+
+    window.onload = function() {
+      window.onfocus = function() {
+        console.log('example');
+      };
+    };
+  </script>
+</body>
+
+</html>
