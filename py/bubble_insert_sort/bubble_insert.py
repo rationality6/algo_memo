@@ -8,7 +8,7 @@ class Sorting_machine:
     def printing(self):
         print(self.arr)
 
-    def make_array_suffle(self, til):
+    def make_array_suffled(self, til):
         self.arr = [i for i in range(til)]
         for i in range(0, len(self.arr)):
             random_number = randint(0, len(self.arr) - 1)
@@ -29,9 +29,16 @@ class Sorting_machine:
                 if self.arr[x] > self.arr[x + 1]:
                     self.swap(x)
 
-    def insert_sort(self):
-        for i in self.arr:
-            print(i)
+    def insertion_sort(self):
+        for i in range(1, len(self.arr)):
+            currentvalue = self.arr[i]
+            position = i
+
+            while position > 0 and self.arr[position - 1] > currentvalue:
+                self.arr[position] = self.arr[position - 1]
+                position = position - 1
+
+            self.arr[position] = currentvalue
 
     def bubblesort_reverse(self):
         for i in range(len(self.arr)):
@@ -41,5 +48,3 @@ class Sorting_machine:
 
     def swap_reverse(self, i):
         self.arr[i], self.arr[i - 1] = self.arr[i - 1], self.arr[i]
-
-    
