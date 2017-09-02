@@ -33,11 +33,9 @@ class Sorting_machine:
         for i in range(1, len(self.arr)):
             currentvalue = self.arr[i]
             position = i
-
             while position > 0 and self.arr[position - 1] > currentvalue:
                 self.arr[position] = self.arr[position - 1]
                 position = position - 1
-
             self.arr[position] = currentvalue
 
     def bubblesort_reverse(self):
@@ -48,3 +46,7 @@ class Sorting_machine:
 
     def swap_reverse(self, i):
         self.arr[i], self.arr[i - 1] = self.arr[i - 1], self.arr[i]
+
+    # @staticmethod
+    def foobar():
+        print('foo')
