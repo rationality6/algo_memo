@@ -47,6 +47,7 @@ for _ in range(5):
     part4 = part2 % 12
     part5 = int(part4 / 4)
     doomsDay = part3 + part4 + part5 + part1
+    print(doomsDay)
 
     while doomsDay > 7:
         doomsDay = doomsDay - 7
