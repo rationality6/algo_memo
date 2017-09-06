@@ -1,0 +1,73 @@
+[Command: python3 -u /Users/macpro/github/algo_memo/memo/find_biggest_box/mock.py]
+checking position:  (0, 0)
+2  elements in:
+ [['X' 'O' 'O' 'O' 'X']
+ ['X' 'O' 'O' 'O' 'O']
+ ['X' 'X' 'O' 'O' 'O']
+ ['X' 'X' 'O' 'O' 'O']
+ ['X' 'X' 'X' 'X' 'X']]
+================
+checking position:  (0, 0)
+2  elements in:
+ [['X' 'O' 'O' 'O']
+ ['X' 'O' 'O' 'O']
+ ['X' 'X' 'O' 'O']
+ ['X' 'X' 'O' 'O']]
+================
+checking position:  (0, 1)
+2  elements in:
+ [['O' 'O' 'O' 'X']
+ ['O' 'O' 'O' 'O']
+ ['X' 'O' 'O' 'O']
+ ['X' 'O' 'O' 'O']]
+================
+checking position:  (1, 0)
+2  elements in:
+ [['X' 'O' 'O' 'O']
+ ['X' 'X' 'O' 'O']
+ ['X' 'X' 'O' 'O']
+ ['X' 'X' 'X' 'X']]
+================
+checking position:  (1, 1)
+2  elements in:
+ [['O' 'O' 'O' 'O']
+ ['X' 'O' 'O' 'O']
+ ['X' 'O' 'O' 'O']
+ ['X' 'X' 'X' 'X']]
+================
+checking position:  (0, 0)
+2  elements in:
+ [['X' 'O' 'O']
+ ['X' 'O' 'O']
+ ['X' 'X' 'O']]
+================
+checking position:  (0, 1)
+2  elements in:
+ [['O' 'O' 'O']
+ ['O' 'O' 'O']
+ ['X' 'O' 'O']]
+================
+checking position:  (0, 2)
+2  elements in:
+ [['O' 'O' 'X']
+ ['O' 'O' 'O']
+ ['O' 'O' 'O']]
+================
+checking position:  (1, 0)
+2  elements in:
+ [['X' 'O' 'O']
+ ['X' 'X' 'O']
+ ['X' 'X' 'O']]
+================
+checking position:  (1, 1)
+2  elements in:
+ [['O' 'O' 'O']
+ ['X' 'O' 'O']
+ ['X' 'O' 'O']]
+================
+checking position:  (1, 2)
+1  elements in:
+ [['O' 'O' 'O']
+ ['O' 'O' 'O']
+ ['O' 'O' 'O']]
+[Finished in 0.205s]
