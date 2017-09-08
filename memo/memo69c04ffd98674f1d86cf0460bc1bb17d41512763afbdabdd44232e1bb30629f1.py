@@ -163,5 +163,38 @@ print([[lval, rval] for lval, rval in zip(L, R)])
 for val in map(lambda x: x ** 2, range(10)):
     print(val, end=' ')
 
-for val in filter(lambda x:x % 2 == 0,range(10)):
-    print(val,end=' ')
+for val in filter(lambda x: x % 2 == 0, range(10)):
+    print(val, end=' ')
+
+
+print([i for i in map(lambda x: x * x, range(10))])
+print([i for i in filter(lambda x: x > 5, range(10))])
+
+print([*range(3, 10)])
+
+print([*map(lambda x: x ** 2, range(10))])
+
+print([*filter(lambda x: x % 2 == 0, range(0, 10 + 1))])
+
+l1 = (1, 2, 3, 4)
+l2 = ('a', 'b', 'c', 'd')
+z = zip(l1, l2)
+print(z)
+new_L1, new_L2 = zip(*z)
+print(new_L1, new_L2)
+
+
+l1 = [1, 2, 3]
+l2 = [1, 2, 3, 4]
+z = zip(l1, l2)
+a, b = zip(*z)
+print(a, b)
+
+l = [*filter(lambda x:x % 2 == 0, range(1, 11))]
+r = [*map(lambda x:x * 3, range(1, 6))]
+for lval, rval in zip(l, r):
+    print(lval, rval)
+
+from itertools import permutations
+p = permutations(range(3))
+print(*p)
