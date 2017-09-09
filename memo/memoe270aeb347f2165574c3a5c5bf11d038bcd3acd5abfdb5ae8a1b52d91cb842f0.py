@@ -113,3 +113,79 @@ for val in L:
 G = (n**2 for n in range(12))
 for val in G:
     print(val, end=' ')
+
+from itertools import count
+for i in count():
+    print(i, end=' ')
+    if i >= 10:
+        break
+
+from itertools import count
+factors = [2, 3, 5, 7]
+G = (i for i in count() if all(i % n > 0 for n in factors))
+
+for val in G:
+    print(val, end=' ')
+    if val > 40:
+        break
+
+factors = [2, 3, 5, 7]
+for n in factors
+print(all(i <= 9 for i in range(10)))
+
+L = [n ** 2 for n in range(12)]
+for val in L:
+    print(val, end=' ')
+print()
+for val in L:
+    print(val, end=' ')
+
+G = (n ** 2 for n in range(12))
+print(list(G))
+print(list(G))
+
+
+G = (n ** 2 for n in range(12))
+for n in G:
+    print(n, end=' ')
+    if n > 30:
+        break
+
+print("\ndoing something in between")
+
+for n in G:
+    print(n, end=' ')
+
+
+def memoization(num):
+    memo_map = {0: 0, 1: 1}
+    if in map_map
+        memo_map[num] = memoization(num - 1) + memoization(num - 2)
+    return memo_map[num]
+
+
+print(memoization(20))
+
+
+
+
+
+import time
+st = time.time()
+
+cache = {}
+def fib(n):
+    if n not in cache.keys():
+        cache[n] = _fib(n)
+    return cache[n]
+
+def _fib(n):
+    if n < 2:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+
+print(_fib(15))
+# print(fib(15))
+
+print("{}".format(time.time()-st))
