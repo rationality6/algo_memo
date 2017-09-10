@@ -62,4 +62,4 @@ class Dooms_day_machine():
 
 
 machine0 = Dooms_day_machine()
-print(machine0.dooms_day_checker("2017/1/22"))
+print(machine0.dooms_day_checker("2079/7/4"))
