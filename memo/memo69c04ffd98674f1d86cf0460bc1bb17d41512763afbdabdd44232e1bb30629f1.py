@@ -1,28 +1,3 @@
-# import hashlib
-# print(hashlib.sha256("oxford").hexdigest())
-
-
-def fibonacci(N, a=0, b=1):
-    L = []
-    while len(L) < N:
-        a, b = b, a + b
-        L.append(a)
-    return L
-
-
-print(fibonacci(10))
-
-
-def fibonacci_recersive(N):
-    if N < 2:
-        return N
-    else:
-        return fibonacci_recersive(N - 1) + fibonacci_recersive(N - 2)
-
-
-print(fibonacci_recersive(10))
-
-
 def catch_all(*args, **kwargs):
     print("args = ", args)
     print("kwargs ", kwargs)

@@ -1,5 +1,33 @@
-# import hashlib
-# print(hashlib.sha256(b"??").hexdigest())
+# down to top
+def fib(n):
+    arr = [1, 1]
+    for i in range(2, n):
+        arr.insert(i, arr[i - 2] + arr[i - 1])
+    print(arr[n - 1])
+fib(10)
+
+#down to top
+def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    print(a)
+fib(10)
+
+#down to top
+def fib(n, a=0, b=1):
+    l = [0]
+    for _ in range(n):
+        a, b = b, a + b
+        l.append(a)
+    return l
+print(fib(10))
+
+# top to bottom
+def fib(n):
+    return n if n < 2 else fib(n - 1) + fib(n - 2)
+print(fib(10))
+
 
 import itertools
 p = itertools.permutations(range(3))
@@ -167,25 +195,26 @@ def memoization(num):
 print(memoization(20))
 
 
-
-
-
 import time
 st = time.time()
 
 cache = {}
+
+
 def fib(n):
     if n not in cache.keys():
         cache[n] = _fib(n)
     return cache[n]
 
+
 def _fib(n):
     if n < 2:
         return n
     else:
-        return fib(n-1) + fib(n-2)
+        return fib(n - 1) + fib(n - 2)
+
 
 print(_fib(15))
 # print(fib(15))
 
-print("{}".format(time.time()-st))
+print("{}".format(time.time() - st))

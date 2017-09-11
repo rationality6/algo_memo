@@ -80,3 +80,33 @@ def get_text(name):
 
 
 print(get_text("Hyun"))
+
+
+def fib(n):
+    return n if n < 2 else fib(n - 1) + fib(n - 2)
+
+
+print(fib(13))
+
+
+# ////////////////////////////////////////////////////////
+import time
+
+fib_cache = {}
+
+def _fib(n):
+    return n if n < 2 else fib(n - 1) + fib(n - 2)
+
+
+def fib(n):
+    if n in fib_cache:
+        return fib_cache[n]
+    else:
+        fib_cache[n] = n if n < 2 else fib(n - 1) + fib(n - 2)
+        return fib_cache[n]
+
+
+start = time.time()
+print(fib(500))
+# print(_fib(500))
+print("{:0.4f}".format(time.time() - start))
