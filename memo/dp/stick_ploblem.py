@@ -2,10 +2,14 @@ stick_prices = [0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
 
 
 def cut_rod(p, n):
-    r = []
-    for i in range(n):
+    r = [0]
+    for j in range(1, n):
         q = -1
-        for i in j
+        for i in range(1, j):
+            q = max(q, p[i] + r[j - i])
+        r[j] = q
+
+    return r[n]
 
 
 print(cut_rod(stick_prices, 2))  # 5
