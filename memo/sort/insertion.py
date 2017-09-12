@@ -19,10 +19,10 @@ class Sort_machine:
         for i in range(1, len(alist)):
             pos = i
             cur = alist[i]
-            while pos < 0 and cur < alist[i - 1]:
-                alist
+            while pos > 0 and cur < alist[pos - 1]:
+                alist[pos] = alist[pos - 1]
                 pos -= 1
-
+            alist[pos] = cur
 
     def bubble_sort(self):
         alist = self.alist
@@ -34,6 +34,7 @@ class Sort_machine:
 
 sort0 = Sort_machine(20)
 sort0.random_arr()
-# print(sort0.alist)
-sort0.bubble_sort()
+print(sort0.alist)
+# sort0.bubble_sort()
+sort0.insertion_sort()
 print(sort0.alist)
