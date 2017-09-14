@@ -33,16 +33,26 @@ class Sort_machine:
 
     def selection_sort(self):
         alist = self.alist
-        for i in range(len(alist)):
-            sel = i
-            for z in range(i):
-                sel
+        length = len(alist)
+        for i in range(length - 1):
+            index = i
+            for z in range(i + 1, length):
+                if alist[index] > alist[z]:
+                    index = z
+            alist[i], alist[index] = alist[index], alist[i]
+
+    def merge_sort(self):
+        print("hello")
+        pass
 
 
-sort0 = Sort_machine(20)
+sort0 = Sort_machine(10)
 sort0.random_arr()
 print(sort0.alist)
+
 # sort0.bubble_sort()
 # sort0.insertion_sort()
-sort0.selection_sort()
+# sort0.selection_sort()
+sort0.merge_sort()
+
 print(sort0.alist)

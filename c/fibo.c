@@ -9,7 +9,7 @@ int fibo(int num){
 }
 
 int main(){
-  printf("%d",fibo(94));
+  printf("%d",fibo(20));
 
 }
 
@@ -24,6 +24,3 @@ int main(){
 // }
 //
 // console.log(fibo(94));
-
-
-int memory[];
