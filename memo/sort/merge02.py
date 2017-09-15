@@ -34,7 +34,7 @@ class Sort_machine:
         return self.merge(left, right)
 
 
-sort0 = Sort_machine(100)
+sort0 = Sort_machine(10)
 sort0.random_arr()
 print(sort0.alist)
 

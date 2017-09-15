@@ -41,10 +41,6 @@ class Sort_machine:
                     index = z
             alist[i], alist[index] = alist[index], alist[i]
 
-    def merge_sort(self):
-        print("hello")
-        pass
-
 
 sort0 = Sort_machine(10)
 sort0.random_arr()
