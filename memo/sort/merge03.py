@@ -16,18 +16,24 @@ print(random_arr0)
 def merge(left, right):
     result = []
     l, r = 0, 0
-
-    while i
-
+    while l < len(left) and r < len(right):
+        if left[l] <= right[r]:
+            result.append(left[l])
+            l += 1
+        else:
+            result.append(right[r])
+            r += 1
+    result += left[l:]
+    result += right[r:]
     return result
 
 
 def merge_sort(ARR):
-    if ARR = < 1:
+    if len(ARR) <= 1:
         return ARR
     middle = int(len(ARR) / 2)
-    left = merge_sort[:middle]
-    right = merge_sort[middle:]
+    left = merge_sort(ARR[:middle])
+    right = merge_sort(ARR[middle:])
     return merge(left, right)
 
 
