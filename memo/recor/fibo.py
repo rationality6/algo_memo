@@ -29,3 +29,14 @@ def fibonacci_memoize(n):
 
 print(fibonacci_memoize(10))
 print(cache)
+
+
+cache = {}
+def fibonacci_memoize(n):
+    if n in cache:
+        return cache[n]
+    else:
+        cache[n] = n if n < 2 else fibonacci_memoize(n -1) + fibonacci_memoize(n-2)
+        return cache[n]
+print(fibonacci_memoize(10))
+print(cache)

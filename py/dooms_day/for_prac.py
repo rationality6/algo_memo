@@ -28,7 +28,7 @@ for _ in range(5):
     else:
         day = randint(1, Months[month - 1][2])
 
-    print(month, "/", day, "/", year)
+    print("Month ",month, "/Day ", day, "/Year ", year)
 
     if year < 1900:
         part1 = 6
