@@ -23,7 +23,7 @@ def spliting(lst):
         return lst
     middle = int(len(lst) / 2)
     left = spliting(lst[:middle])
-    print(left,'left')
+    print(left, 'left')
     right = spliting(lst[middle:])
     # return left, right
 

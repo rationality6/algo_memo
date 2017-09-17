@@ -10,8 +10,6 @@ def _fib(n):
 
 
 cache = {}
-
-
 def fib(n):
     if n in cache:
         return cache[n]

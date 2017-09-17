@@ -18,7 +18,6 @@ def init_tree():
     leaf = []
     for i in range(6):
         leaf.append(Tree(i + 1))
-
     left_subsubtree = Tree(7, leaf[0], leaf[1])
     right_subsubtree = Tree(8, leaf[2], leaf[3])
     left_subtree = Tree(9, left_subsubtree, right_subsubtree)
@@ -33,8 +32,8 @@ root0 = init_tree()
 def preorder_traverse(tree):
     if tree == None:
         return
-    preorder_traverse(tree.left_child)
     print(tree.data)
+    preorder_traverse(tree.left_child)
     preorder_traverse(tree.right_child)
 
 

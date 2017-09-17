@@ -10,7 +10,6 @@ def random_arr(a, b):
 
 
 random_arr0 = random_arr(0, 10)
-print(random_arr0)
 
 
 def merge(left, right):
@@ -28,18 +27,13 @@ def merge(left, right):
     return result
 
 
-def merge_sort(lst):
-    if len(lst) <= 1:
-        return lst
-
-    middle = len(lst) // 2
-    left = merge_sort(lst[:middle])
-    right = merge_sort(lst[middle:])
+def merge_sort(ARR):
+    if len(ARR) <= 1:
+        return ARR
+    middle = len(ARR) // 2
+    left = merge_sort(ARR[:middle])
+    right = merge_sort(ARR[middle:])
     return merge(left, right)
 
-
-if __name__ == '__main__':
-    alist = [3, 4, 8, 0, 6, 7, 4, 2, 1, 9, 4, 5]
-    # alist = [3]
-    # alist = [3, 9, 5, 6, 7, 8]
-    print(merge_sort(random_arr0))
+print(random_arr0)
+print(merge_sort(random_arr0))

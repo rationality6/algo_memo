@@ -8,7 +8,7 @@ class Tree:
 def init_tree():
     leafs = []
     for i in range(6):
-        leafs.append(Tree(i))
+        leafs.append(Tree(i + 1))
     left_subsubtree = Tree(6, leafs[0], leafs[1])
     right_subsubtree = Tree(7, leafs[2], leafs[3])
     left_subtree = Tree(8, left_subsubtree, right_subsubtree)
@@ -44,6 +44,6 @@ def postorder_traverse(tree):
     print(tree.data)
 
 
-preorder_traverse(root0)
-# inorder_traverse(root0)
+# preorder_traverse(root0)
+inorder_traverse(root0)
 # postorder_traverse(root0)
