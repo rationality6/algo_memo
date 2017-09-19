@@ -18,9 +18,9 @@ def selection_sort(ARR):
         for z in range(i + 1, len(ARR)):
             if ARR[index] > ARR[z]:
                 index = z
-            ARR[index], ARR[i] = ARR[i], ARR[index]
+        ARR[index], ARR[i] = ARR[i], ARR[index]
 
 
-random_arr0
+print(random_arr0)
 selection_sort(random_arr0)
 print(random_arr0)

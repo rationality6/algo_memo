@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-main()
-{
+int main(){
         int age = 10;
         int height = 72;
 

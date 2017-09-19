@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+int foo(int bar)
+{
+        return bar * 2;
+}
+
 int main()
 {
         char * name = "John Smith";
@@ -20,9 +25,3 @@ int main()
 
         return 0;
 }
-
-int foo(int bar){
-  return bar * 2;
-}
-
-void moo

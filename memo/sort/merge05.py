@@ -14,26 +14,27 @@ random_arr0 = random_arr(0, 10)
 
 def merge(left, right):
     result = []
-    i, j = 0, 0
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            result.append(left[i])
-            i += 1
+    l, r = 0, 0
+    while l < len(left) and r < len(right):
+        if left[l] <= right[r]:
+            result.append(left[l])
+            l += 1
         else:
-            result.append(right[j])
-            j += 1
-    result += left[i:]
-    result += right[j:]
+            result.append(right[r])
+            r += 1
+    result += left[l:]
+    result += right[r:]
     return result
 
 
-def merge_sort(ARR):
-    if len(ARR) <= 1:
-        return ARR
-    middle = len(ARR) // 2
-    left = merge_sort(ARR[:middle])
-    right = merge_sort(ARR[middle:])
+def merge_sort(LIST):
+    if len(LIST) <= 1:
+        return LIST
+    middle = len(LIST) // 2
+    left = merge_sort(LIST[:middle])
+    right = merge_sort(LIST[middle:])
     return merge(left, right)
+
 
 print(random_arr0)
 print(merge_sort(random_arr0))

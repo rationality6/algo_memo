@@ -11,12 +11,12 @@ def random_array_maker(N):
 
 def insertion_sort(alist):
     for i in range(1, len(alist)):
-        cur = alist[i]
-        pos = i
-        while 0 < pos and cur < alist[pos - 1]:
-            alist[pos] = alist[pos - 1]
-            pos -= 1
-        alist[pos] = cur
+        current = alist[i]
+        position = i
+        while 0 < position and current < alist[position - 1]:
+            alist[position] = alist[position - 1]
+            position -= 1
+        alist[position] = current
 
 
 def bubble(alist):
@@ -26,8 +26,44 @@ def bubble(alist):
                 alist[z], alist[z + 1] = alist[z + 1], alist[z]
 
 
-list0 = random_array_maker(20)
-print(list0)
-# insertion_sort(list0)
-bubble(list0)
-print(list0)
+def selection_sort(ARR):
+    arr_length = len(ARR)
+    for i in range(arr_length - 1):
+        index = i
+        for z in range(i + 1, arr_length):
+            if ARR[index] > ARR[z]:
+                index = z
+        ARR[index], ARR[i] = ARR[i], ARR[index]
+
+
+def merge(left, right):
+    result = []
+    i, j = 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result += left[i:]
+    result += right[j:]
+    return result
+
+
+def merge_sort(ARR):
+    if len(ARR) <= 1:
+        return ARR
+    middle = len(ARR) // 2
+    left = merge_sort(ARR[:middle])
+    right = merge_sort(ARR[middle:])
+    return merge(left, right)
+
+
+if __name__ == '__main__':
+    list0 = random_array_maker(20)
+    print(list0)
+    # insertion_sort(list0)
+    # bubble(list0)
+    # selection_sort(list0)
+    print(merge_sort(list0))

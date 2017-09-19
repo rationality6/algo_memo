@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-int main(){
-  printf('awef');
-}
 void printTree(){
 
+}
+
+int main(){
+        printf("awef");
+        return 0;
 }

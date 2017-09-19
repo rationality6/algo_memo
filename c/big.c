@@ -6,6 +6,7 @@ int min(int a, int b, int c) {
 }
 
 int main(){
-      int i, j, k=0,n,m,b[1001][1001],d[1001]
-
+        int i, j, k=0,n,m,b[1001][1001],d[1001];
+        
+        return 0;
 }

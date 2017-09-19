@@ -56,3 +56,21 @@ def solution(n, arr1, arr2):
 arr1 = [46, 33, 33, 22, 31, 50]
 arr2 = [27, 56, 19, 14, 14, 10]
 print(solution(6, arr1, arr2))
+
+
+# 3차
+def solution(n, arr1, arr2):
+    return [format((a | b), '0{}b'.format(n)).replace('0', ' ').replace('1', '#') for a, b in zip(arr1, arr2)]
+
+
+arr1 = [9, 20, 28, 18, 11]
+arr2 = [30, 1, 21, 17, 28]
+print(solution(5, arr1, arr2))
+
+
+arr1 = [46, 33, 33, 22, 31, 50]
+arr2 = [27, 56, 19, 14, 14, 10]
+print(solution(6, arr1, arr2))
+
+
+print(format((46 | 27), 'b'))
