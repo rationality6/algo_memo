@@ -143,16 +143,3 @@ if __name__ == '__main__':
     # print(test(random_arr, 100, selection_sort))
     # print(test(random_arr, 100, merge_sort))
     # print(test(random_arr, 100, quick_sort))
-
-
-print(format(("0000111101010101010"), '0d'))
-a = "0000111101010101010"
-print(int(a, 2))
-
-
-a=20
-def A():
-    print(a)
-a=10
-print(a)
-A()

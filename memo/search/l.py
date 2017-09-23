@@ -91,7 +91,7 @@ def merge_sort(LIST):
     return merge(left, right)
 
 
-def partition(LIST, start, end):
+def partition_hoare(LIST, start, end):
     pivot = LIST[start]
     left = start + 1
     right = end
@@ -109,30 +109,65 @@ def partition(LIST, start, end):
     return right
 
 
-def lomuto(LIST, start, end):
-    pivot = LIST[start]
-    left = start+1
+def lomuto(A, lo, hi):
+    pivot = A[hi]
+    i = lo - 1
+    for j in range(lo, hi):
+        if A[j] < pivot:
+            i += 1
+            A[j], A[i] = A[i], A[j]
+    if A[hi] < A[i + 1]:
+        A[hi], A[i + 1] = A[i + 1], A[hi]
+    return i + 1
 
 
 def quick_sort(LIST, start, end):
     if start < end:
-        pivot = partition(LIST, start, end)
+        pivot = partition_hoare(LIST, start, end)
+        print(LIST)
+        # pivot = lomuto(LIST, start, end)
         quick_sort(LIST, start, pivot - 1)
         quick_sort(LIST, pivot + 1, end)
     return LIST
 
 
+def test(random_func, n, anwser_func):
+    result = True
+    for i in range(n):
+        ran0 = random_func(0, i)
+        answer0 = anwser_func(ran0, 0, len(ran0) - 1)
+        if sorted(ran0) != answer0:
+            result = False
+    return result
+
+
 if __name__ == "__main__":
     # arr0 = [*range(0, 80, 7)]
     # print(arr0)
-    arr1 = random_arr(0, 10)
-    print(arr1)
+    # arr1 = random_arr(0, 7)
+    # arr1 = [15, 20, 10, 25, 5, 10]
+    # print(arr1)
+    arr0 = [15, 20, 10, 25, 5, 10]
+
 
     # print(bubble_sort(arr1))
     # print(merge_sort(arr1))
     # print(insertion_sort(arr1))
-    print(quick_sort(arr1, 0, len(arr1) - 1))
+    print(quick_sort(arr0, 0, len(arr0) - 1))
+    # print(quick_sort(arr1, 0, len(arr1) - 1))
     # print(selection_sort(arr1))
 
     # print(search(arr0, 56))
     # print(binary_search(arr0, 7))
+
+    # print(test(random_arr, 100, quick_sort))
+
+    # print(1 is 1)
+    # print(1 == 1)
+    # print([] == [])
+    # print([1] == [1])
+    # print([1] == [2])
+    # print([1] is [1])
+    # print([1] is [2])
+    # a = []
+    # print(a is a)
