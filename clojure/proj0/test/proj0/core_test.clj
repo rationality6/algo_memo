@@ -1,6 +1,6 @@
-(ns proj.core-test
+(ns proj0.core-test
   (:require [clojure.test :refer :all]
-            [proj.core :refer :all]))
+            [proj0.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

@@ -149,7 +149,6 @@ if __name__ == "__main__":
     # print(arr1)
     arr0 = [15, 20, 10, 25, 5, 10]
 
-
     # print(bubble_sort(arr1))
     # print(merge_sort(arr1))
     # print(insertion_sort(arr1))

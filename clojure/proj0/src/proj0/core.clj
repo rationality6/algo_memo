@@ -1,4 +1,4 @@
-(ns proj.core)
+(ns proj0.core)
 
 (defn foo
   "I don't do a whole lot."
