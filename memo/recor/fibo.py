@@ -28,6 +28,7 @@ def fibonacci_memoize(n):
         return cache[n]
 
 print(fibonacci_memoize(10))
+print(fibonacci_memoize(4000000))
 print(cache)
 
 
@@ -39,4 +40,5 @@ def fibonacci_memoize(n):
         cache[n] = n if n < 2 else fibonacci_memoize(n -1) + fibonacci_memoize(n-2)
         return cache[n]
 print(fibonacci_memoize(10))
+print(fibonacci_memoize(4000000))
 print(cache)

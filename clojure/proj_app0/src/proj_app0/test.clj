@@ -24,20 +24,21 @@
 (defn foobar [name]
   (println ()))
 
-(for [n [1 2 3 4 5]](* 2 n))
-(for [n [2 2 3]](+ 4 n))
-(for [n [1 2 3]](Math/pow n 2))
+(for [n [1 2 3 4 5]] (* 2 n))
+(for [n [2 2 3]] (+ 4 n))
+(for [n [1 2 3]] (Math/pow n 2))
 
 (def looping
   (for [n [1 2 3 4 5]]
     (n)))
 
-
 (range 3 8)
 
+(->>
+ (range 1000)
+ (filter (fn [x] (or (= (mod x 3) 0) (= (mod x 5) 0))))
+ (reduce +)
+ println)
 
 (->>
-  (range 1000)
-  (filter (fn [x] (or (= (mod x 3) 0) (= (mod x 5) 0))))
-  (reduce +)
-  println)
+  (range 0 8 2))
