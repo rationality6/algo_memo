@@ -1,36 +1,17 @@
-import numpy as np
-
-m0 = [[1, 2, 3, 3], [3, 4, 5, 6]]
-m1 = [[1, 2, 3, 4], [3, 4, 5, 6]]
-print(np.array(m0))
-print(np.unique(m0))
+class Test:
+    def assert_equals(self, anwser_code, anwser):
+        print(anwser_code == anwser)
 
 
-result = 0
-for i in list(str(382)):
-    result += int(i)
-print(result)
+test = Test()
 
 
-arr = [1, 2, 3, 4]
+def find_nb(m):
+    pass
 
 
-# def foo(arr):
-#     try:
-#         for i in range(1, len(arr) + 1):
-#             print(arr.index(i))
-#         return True
-#     except Exception as e:
-#         return False
-#
-#
-# print(foo(arr))
-
-
-def solution(arr):
-    answer = True
-
-    a = [i for i in range(1, len(arr) + 1)]
-    if a != sorted(arr):
-        answer = False
-    return answer
+test.assert_equals(find_nb(4183059834009), 2022)
+test.assert_equals(find_nb(24723578342962), -1)
+test.assert_equals(find_nb(135440716410000), 4824)
+test.assert_equals(find_nb(40539911473216), 3568)
+test.assert_equals(find_nb(26825883955641), 3218)
