@@ -1,14 +1,10 @@
 import time
-st = time.time()
 
 cache = {}
-
-
 def fib(n):
     if n not in cache.keys():
         cache[n] = _fib(n)
     return cache[n]
-
 
 def _fib(n):
     if n < 2:
@@ -16,33 +12,30 @@ def _fib(n):
     else:
         return fib(n - 1) + fib(n - 2)
 
-
-for _ in range(990000):
+st = time.time()
+for _ in range(990009):
     # _fib(495)
     fib(495)
-
-
-print("{}".format(round(time.time() - st, 2)))
+    print(cache)
+print("{}".format(round(time.time() - st, 5)))
 
 
 def memoize(f):
-    cache = {}
-
-    def decorated_function(*args):
-        if args in cache:
-            return cache[args]
+    CACHE = {}
+    def deco_func(*args):
+        if args in CACHE:
+            return CACHE[args]
         else:
-            cache[args] = f(*args)
-            return cache[args]
-    return decorated_function
-
+            CACHE[args] = f(*args)
+            return CACHE[args]
+    return deco_func
 
 @memoize
-def fib(n):
-    return n if n < 2 else fib(n - 2) + fib(n - 1)
+def f(N):
+    return N if N < 2 else f(N-1) + f(N-2)
+print(f(10))
 
 
-print(fib(15))
 
 
 def greet(name):

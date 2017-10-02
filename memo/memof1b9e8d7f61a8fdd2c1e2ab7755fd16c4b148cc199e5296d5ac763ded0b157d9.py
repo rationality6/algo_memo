@@ -1,61 +1,61 @@
-# import hashlib
-# a = hashlib.sha256(b"oxf").hexdigest()
-# print(a)
-#
-# L1 = [n**2 for n in range(12)]
-# L2 = []
-#
-# for n in range(12):
-#     L2.append(n**2)
-#
-# print(L1)
-# print(L2)
-#
-#
-# G1 = (n ** 2 for n in range(12))
-#
-#
-# def gen():
-#     for n in range(12):
-#         yield n ** 2
-#
-#
-# G2 = gen()
-# print(*G1)
-# print(*G2)
-#
-# L = [n for n in range(2, 40)]
-# print(L)
-#
-# L = [n for n in L if n == L[0] or n % L[0] > 0]
-# print(L)
-#
-# L = [n for n in L if n == L[1] or n % L[1] > 0]
-# print(L)
-#
-# L = [n for n in L if n == L[2] or n % L[2] > 0]
-# print(L)
-#
-# primes = set()
-# s = {1, 2, 3, 4, 5, 6}
-# s.add(7)
-# print(s)
-#
-# a = [*range(3)]
-# print(a)
-# while a:
-#     print('foo')
-#     a.pop()
+import hashlib
+a = hashlib.sha256(b"oxf").hexdigest()
+print(a)
+
+L1 = [n**2 for n in range(12)]
+L2 = []
+
+for n in range(12):
+    L2.append(n**2)
+
+print(L1)
+print(L2)
 
 
-# def gen_primes(N):
-#     primes = set()
-#     for n in range(2, N):
-#         print(n)
-#         print(primes)
-#         if all(n % p > 0 for p in primes):
-#             primes.add(n)
-#             yield n
+G1 = (n ** 2 for n in range(12))
+
+
+def gen():
+    for n in range(12):
+        yield n ** 2
+
+
+G2 = gen()
+print(*G1)
+print(*G2)
+
+L = [n for n in range(2, 40)]
+print(L)
+
+L = [n for n in L if n == L[0] or n % L[0] > 0]
+print(L)
+
+L = [n for n in L if n == L[1] or n % L[1] > 0]
+print(L)
+
+L = [n for n in L if n == L[2] or n % L[2] > 0]
+print(L)
+
+primes = set()
+s = {1, 2, 3, 4, 5, 6}
+s.add(7)
+print(s)
+
+a = [*range(3)]
+print(a)
+while a:
+    print('foo')
+    a.pop()
+
+
+def gen_primes(N):
+    primes = set()
+    for n in range(2, N):
+        print(n)
+        print(primes)
+        if all(n % p > 0 for p in primes):
+            primes.add(n)
+            yield n
 
 
 def gen_primes(N):
