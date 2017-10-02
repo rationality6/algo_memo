@@ -1,72 +1,57 @@
-import hashlib
-a = hashlib.sha256(b"oxf").hexdigest()
-print(a)
-
-L1 = [n**2 for n in range(12)]
-L2 = []
-
-for n in range(12):
-    L2.append(n**2)
-
-print(L1)
-print(L2)
-
-
-G1 = (n ** 2 for n in range(12))
-
-
-def gen():
-    for n in range(12):
-        yield n ** 2
-
-
-G2 = gen()
-print(*G1)
-print(*G2)
-
-L = [n for n in range(2, 40)]
-print(L)
-
-L = [n for n in L if n == L[0] or n % L[0] > 0]
-print(L)
-
-L = [n for n in L if n == L[1] or n % L[1] > 0]
-print(L)
-
-L = [n for n in L if n == L[2] or n % L[2] > 0]
-print(L)
-
-primes = set()
-s = {1, 2, 3, 4, 5, 6}
-s.add(7)
-print(s)
-
-a = [*range(3)]
-print(a)
-while a:
-    print('foo')
-    a.pop()
-
-
 def gen_primes(N):
     primes = set()
     for n in range(2, N):
-        print(n)
-        print(primes)
         if all(n % p > 0 for p in primes):
             primes.add(n)
             yield n
 
 
 def gen_primes(N):
-    primes = set()
+    primes = []
     for n in range(2, N):
         if all(n % p for p in primes):
-            primes.add(n)
-            yield n
+            primes.append(n)
+    return primes
 
 
-print(*gen_primes(70))
+print(gen_primes(10))
+
+
+def gen_primes(N):
+    cache = []
+    for i in range(2, N):
+        if all(i % n for n in cache):
+            cache.append(i)
+    return cache
+
+
+print(gen_primes(50))
+
+
+def divisor(N):
+    result = []
+    for i in range(2, N):
+        if N % i == 0:
+            return False
+    return True
+
+
+def prime_til(N):
+    result = []
+    for i in range(2, N):
+        if divisor(i):
+            result.append(i)
+    return result
+
+
+print(prime_til(50))
+
+
+print((2**3) * (3**2))
+
+(print(all([1, 2, 3])))
+
+print(*gen_primes(90))
 
 print(all([i < 4 for i in range(5)]))
 
