@@ -14,13 +14,13 @@ def cut_rod(p, n):
         for i in range(1, j + 1):
             q = max(q, p[i] + r[j - i])
         r.insert(j, q)
-    return r
-    # return r[n]
+    # return r
+    return r[n]
 
 
 print(cut_rod(stick_prices, 2))  # 5
 print(cut_rod(stick_prices, 3))  # 8
 print(cut_rod(stick_prices, 4))  # 10
 print(cut_rod(stick_prices, 7))  # 18
-# print(cut_rod(stick_prices, 9))  # 25
-# print(cut_rod(stick_prices, 10))  # 30
+print(cut_rod(stick_prices, 9))  # 25
+print(cut_rod(stick_prices, 10))  # 30
