@@ -22,11 +22,12 @@ def one_down(txt):
                 new_txt += "Z"
             elif i == 'a':
                 new_txt += "z"
+            elif i in "-+,.;:":
+                new_txt += i
             else:
-                txt_list[i] = chr(ord(txt_list[i]) - 1)
-        result = ''.join(txt_list)
-        print(result)
-        return result
+                new_txt += chr(ord(i) - 1)
+        print(new_txt)
+        return new_txt
 
 
 def one_down(txt):
@@ -45,5 +46,3 @@ Test.assert_equals(one_down("Uif usjdl up uijt lbub jt tjnqmf"),
 Test.assert_equals(one_down(45), "Input is not a string")
 Test.assert_equals(one_down("XiBu BcPvU dSbAz UfYu"), "WhAt AbOuT cRaZy TeXt")
 Test.assert_equals(one_down(["Hello there", "World"]), "Input is not a string")
-
-print(chr(ord("A") - 1))

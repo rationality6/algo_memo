@@ -3,35 +3,75 @@ def fib(n):
     arr = [1, 1]
     for i in range(2, n):
         arr.insert(i, arr[i - 2] + arr[i - 1])
-    print(arr[n - 1])
-fib(10)
+    return arr
+print(fib(10))
 
-#down to top
+
+
+cache = {}
+def fib(n):
+    if n in cache:
+        return cache[n]
+    else:
+        cache[n] = n if n < 2 else fib(n - 2) + fib(n - 1)
+        return cache[n]
+    return cache
+print(fib(10))
+print(cache)
+
+
+CACHE = {0: 0, 1: 1}
+def fib(n):
+    if n in CACHE:
+        return CACHE[n]
+    else:
+        if n < 2:
+            CACHE[n] = n
+        else:
+            CACHE[n] = fib(n - 2) + fib(n - 1)
+        return CACHE[n]
+print(fib(10))
+print(CACHE)
+# down to top
+
+
+CACHE = {0: 1, 1: 1}
+for i in range(2, 10):
+    CACHE[i] = CACHE[i - 2] + CACHE[i - 1]
+print(CACHE)
+
+
 def fib(n):
     a, b = 0, 1
     for _ in range(n):
         a, b = b, a + b
     print(a)
+
+
 fib(10)
 
-#down to top
+# down to top
+
+
 def fib(n, a=0, b=1):
     l = [0]
     for _ in range(n):
         a, b = b, a + b
         l.append(a)
     return l
+
+
 print(fib(10))
 
 # top to bottom
+
+
 def fib(n):
     return n if n < 2 else fib(n - 1) + fib(n - 2)
+
+
 print(fib(10))
 
-
-import itertools
-p = itertools.permutations(range(3))
-print(*p)
 
 import itertools
 c = itertools.combinations(range(4), 2)
