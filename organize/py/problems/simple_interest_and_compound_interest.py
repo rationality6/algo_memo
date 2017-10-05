@@ -22,6 +22,7 @@ class Test:
 
 
 def interest(p, r, t):
+    print([int(p + p * r * t), int(p * (1 + r)**t)])
     return[int(p + p * r * t), int(p * (1 + r)**t)]
 
 
