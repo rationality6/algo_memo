@@ -8,7 +8,7 @@ def partition(LIST, start, end):
             left += 1
         while left <= right and pivot <= LIST[right]:
             right -= 1
-        if right < left:
+        if left > right:
             done = True
         else:
             LIST[left], LIST[right] = LIST[right], LIST[left]
@@ -18,13 +18,15 @@ def partition(LIST, start, end):
 
 def quick_sort(alist, start, end):
     if start < end:
-        middle = partition(alist, start, end)
-        quick_sort(alist, start, middle - 1)
-        quick_sort(alist, middle + 1, end)
+        pivot = partition(alist, start, end)
+        quick_sort(alist, start, pivot - 1)
+        quick_sort(alist, pivot + 1, end)
     return alist
 
 
-myList = [7, 2, 5, 1, 29, 6, 4, 19, 11]
-print(myList)
-sortedList = quick_sort(myList, 0, len(myList) - 1)
-print(sortedList)
+if __name__ == "__main__":
+    # myList = [7, 2, 5, 1, 29, 6, 4, 19, 11]
+    myList = [1, 7, 2, 8, 9, 6, 5, 3, 4, 0]
+    print(myList, 'start')
+    sortedList = quick_sort(myList, 0, len(myList) - 1)
+    print(sortedList, 'end')
