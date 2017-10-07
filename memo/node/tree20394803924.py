@@ -30,7 +30,7 @@ class Node():
 
 
 n = Node(0, Node(1))
-n
+
 
 class Solution(object):
     def invertTree(self, root):
