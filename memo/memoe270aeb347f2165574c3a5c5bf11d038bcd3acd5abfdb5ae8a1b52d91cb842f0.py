@@ -1,25 +1,3 @@
-# down to top
-def fib(n):
-    arr = [1, 1]
-    for i in range(2, n):
-        arr.insert(i, arr[i - 2] + arr[i - 1])
-    return arr
-print(fib(10))
-
-
-
-cache = {}
-def fib(n):
-    if n in cache:
-        return cache[n]
-    else:
-        cache[n] = n if n < 2 else fib(n - 2) + fib(n - 1)
-        return cache[n]
-    return cache
-print(fib(10))
-print(cache)
-
-
 CACHE = {0: 0, 1: 1}
 def fib(n):
     if n in CACHE:

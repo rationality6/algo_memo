@@ -26,10 +26,15 @@ def quicksort(alist):
         return first_part + second_part
 
 
+def test():
+    pass
+
+
 if __name__ == "__main__":
+    random_arr0 = random_arr(0, 10)
     # random_arr0 = random_arr(0, 5)
     # random_arr0 = [2, 1, 4, 5, 3]
-    random_arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+    # random_arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 
     print(random_arr0, 'start')
     print(quicksort(random_arr0), 'end')

@@ -12,8 +12,6 @@ def gen_primes(N):
         if all(n % p for p in primes):
             primes.append(n)
     return primes
-
-
 print(gen_primes(10))
 
 
