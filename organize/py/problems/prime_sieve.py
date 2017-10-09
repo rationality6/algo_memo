@@ -21,8 +21,6 @@ def gen_primes(N):
         if all(i % n for n in cache):
             cache.append(i)
     return cache
-
-
 print(gen_primes(50))
 
 
