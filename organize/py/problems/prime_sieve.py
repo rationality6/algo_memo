@@ -12,6 +12,8 @@ def gen_primes(N):
         if all(n % p for p in primes):
             primes.append(n)
     return primes
+
+
 print(gen_primes(10))
 
 
@@ -21,6 +23,8 @@ def gen_primes(N):
         if all(i % n for n in cache):
             cache.append(i)
     return cache
+
+
 print(gen_primes(50))
 
 
