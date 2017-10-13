@@ -38,7 +38,6 @@ def binary_search_recur(array, value, low=0, high=0):
     if low > high:
         return False
     mid = (low + high) // 2
-    print(mid)
     if array[mid] > value:
         return binary_search_recur(array, value, low, mid - 1)
     elif array[mid] < value:
@@ -55,5 +54,5 @@ def average(func, start, end, try_n):
 
 
 # print(average(linear_search, 0, 100, 100))
-print(binary_search_recur([*range(0, 100)], random.randint(0, 100)))
+print(binary_search_recur([*range(0, 100)], random.randint(0, 100), 0, 100))
 # print(average(binary_search, 0, 100, 100))

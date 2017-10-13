@@ -1,3 +1,14 @@
+const get_shuffled_arr = arr => {
+  let clone = arr.slice()
+  for (let i = 0, len = clone.length - 1; i < len; i += 1) {
+    const ran = Math.round(Math.random() * arr.length)
+    const temp = clone[i]
+    clone[i] = clone[ran]
+    clone[ran] = temp
+  }
+  return clone
+}
+
 const merge = (left, right) => {
   let result = [];
   while (left.length && right.length) {
@@ -20,5 +31,8 @@ const mergeSort = array => {
   return merge(mergeSort(left), mergeSort(right));
 };
 
-const ex = [5, 2, 4, 7, 6, 1, 3, 8];
-console.log(mergeSort(ex));
+// const ex = [5, 2, 4, 7, 6, 1, 3, 8, 9];
+const arr0 = [...Array(10).keys()]
+const random_arr0 = get_shuffled_arr(arr0)
+console.log(random_arr0);
+console.log(mergeSort(random_arr0));

@@ -9,6 +9,7 @@ def likes(names):
     elif len(names) > 1:
         return "{}".format(for i in range()'likes this)
 
+
 def likes(names):
     n = len(names)
     return {
@@ -17,7 +18,8 @@ def likes(names):
         2: '{} and {} like this',
         3: '{}, {} and {} like this',
         4: '{}, {} and {others} others like this'
-    }[min(4, n)].format(*names[:3], others=n-2)
+    }[min(4, n)].format(*names[:3], others=n - 2)
+
 
 Test.assert_equals(likes([]), 'no one likes this')
 Test.assert_equals(likes(['Peter']), 'Peter likes this')
