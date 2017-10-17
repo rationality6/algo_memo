@@ -4,13 +4,6 @@ class Test:
 
 
 def likes(names):
-    if names == []:
-        return "no one likes this"
-    elif len(names) > 1:
-        return "{}".format(for i in range()'likes this)
-
-
-def likes(names):
     n = len(names)
     return {
         0: 'no one likes this',
