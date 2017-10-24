@@ -3,3 +3,8 @@ def foobar():
 
 
 foobar()
+def foobar():
+    print("foobar")
+
+
+foobar()
