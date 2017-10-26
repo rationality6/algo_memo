@@ -14,10 +14,7 @@ def turn_countor(turn_data):
 
 
 def result_condition_line(L, one, two, three):
-    if L[one] == L[two] and L[two] == L[three]:
-        return True
-    else:
-        return False
+    return L[one] == L[two] and L[two] == L[three]
 
 
 def result_condition(check_func, L):
@@ -38,16 +35,16 @@ def result_condition(check_func, L):
     if check_func(L, 2, 4, 6):
         return True
 
+
 def tic_tac_toe_game():
     os.system('clear')
     game_list = [*range(1, 10)]
     icons = ["O", "X"]
     turn = 0
     turn_total_count = 0
-    keep_going = True
     user_choose = False
 
-    while keep_going:
+    while True:
 
         if user_choose:
             if user_choose.isdecimal():
@@ -76,5 +73,6 @@ def tic_tac_toe_game():
         user_choose = input("Select a spot: ")
         os.system('clear')
 
+    print('win', icons[turn_countor(turn)])
 
 tic_tac_toe_game()
