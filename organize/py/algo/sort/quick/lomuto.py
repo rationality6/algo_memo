@@ -9,17 +9,20 @@ def random_arr(a, b):
     return arr
 
 
-def quicksort(alist):
-    if len(alist) <= 1:
-        return alist
-    else:
-        pivot = alist[0]
-        i = 0
-        for j in range(len(alist) - 1):
-            if alist[j + 1] < pivot:
-                alist[j + 1], alist[i + 1] = alist[i + 1], alist[j + 1]
-                i += 1
-        alist[0], alist[i] = alist[i], alist[0]
+def partition(alist):
+    pivot = alist[0]
+    i = 0
+    for j in range(len(alist) - 1):
+        if alist[j + 1] < pivot:
+            alist[j + 1], alist[i + 1] = alist[i + 1], alist[j + 1]
+            i += 1
+    alist[0], alist[i] = alist[i], alist[0]
+    return i
+
+
+def quicksort(L, S, E):
+    if S < E
+        pivot = partition(L)
         first_part = quicksort(alist[:i])
         second_part = quicksort(alist[i + 1:])
         first_part.append(alist[i])
@@ -31,7 +34,7 @@ def test():
 
 
 if __name__ == "__main__":
-    random_arr0 = random_arr(0, 10)
+    random_arr0 = random_arr(1, 11)
     # random_arr0 = random_arr(0, 5)
     # random_arr0 = [2, 1, 4, 5, 3]
     # random_arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
