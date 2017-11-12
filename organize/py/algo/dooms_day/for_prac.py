@@ -13,11 +13,19 @@ September = [9, 30, 30, 5, 5]
 October = [10, 31, 31, 10, 10]
 November = [11, 30, 30, 7, 7]
 December = [12, 31, 31, 12, 12]
+
 Months = [January, February, March, April, May, June,
           July, August, September, October, November, December]
+
 WeekText = ["Sunday", "Monday", "Tuesday",
             "Wednesday", "Thursday", "Friday", "Saturday"]
+
 Years = [1800, 2199]
+
+def weeks_subtractor(D):
+    while D > 7:
+        D -= 7
+    return D
 
 for _ in range(5):
     month = Months[randint(0, 11)][0]
@@ -28,7 +36,7 @@ for _ in range(5):
     else:
         day = randint(1, Months[month - 1][2])
 
-    print("Month ",month, "/Day ", day, "/Year ", year)
+    print("Month ", month, "/Day ", day, "/Year ", year)
 
     if year < 1900:
         part1 = 6
@@ -47,27 +55,22 @@ for _ in range(5):
     part4 = part2 % 12
     part5 = int(part4 / 4)
     doomsDay = part3 + part4 + part5 + part1
-    print(doomsDay)
 
-    while doomsDay > 7:
-        doomsDay = doomsDay - 7
+    weeks_subtractor(doomsDay)
 
     if month > 2:
         part6 = (day + 14) - Months[month - 1][3]
         myDay = doomsDay + part6
-        while myDay > 7:
-            myDay = myDay - 7
+        myDay = weeks_subtractor(myDay)
     else:
         if (year % 400) != 0 and (year % 4) != 0:
             part6 = (day + 35) - Months[month - 1][3]
             myDay = doomsDay + part6
-            while myDay > 7:
-                myDay = myDay - 7
+            myDay = weeks_subtractor(myDay)
         else:
             part6 = (day + 35) - Months[month - 1][4]
             myDay = doomsDay + part6
-            while myDay > 7:
-                myDay = myDay - 7
+            myDay = weeks_subtractor(myDay)
 
     start = time.time()
     guess = input("Enter your guess for the day of the week: ")
