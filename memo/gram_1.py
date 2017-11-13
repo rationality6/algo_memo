@@ -43,9 +43,21 @@ def solution(day, k):
     for i in dooms_day_table:
         part = (k + 35) - i
         result = (dooms_day + part) % 7
+        print(result)
 
         answer.append(1) if result == 6 or result == 0 else answer.append(0)
 
+    return answer
+
+
+def solution(day, k):
+    answer = []
+    month_table = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    days_before = 0
+    for i in month_table:
+        result = (day + k + days_before) % 7
+        answer.append(1) if result == 6 or result == 0 else answer.append(0)
+        days_before += i
     return answer
 
 
