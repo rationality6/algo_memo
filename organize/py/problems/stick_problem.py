@@ -11,6 +11,14 @@ def cut_rod(p, n):
     r = [0]
     for j in range(1, n + 1):
         q = 0
+        for i in range(1, n + 1):
+            q = max(q, p[i] + r[j - i])
+
+
+def cut_rod(p, n):
+    r = [0]
+    for j in range(1, n + 1):
+        q = 0
         for i in range(1, j + 1):
             q = max(q, p[i] + r[j - i])
         r.insert(j, q)
