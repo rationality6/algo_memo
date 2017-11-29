@@ -18,7 +18,10 @@ class Test:
         print(a == b)
 
 
-def palindrome(num): return ''.join(reversed(str(num))) == str(num) if isinstance(num, int) and num > -1 else "Not valid"
+# def palindrome(num): return ''.join(reversed(str(num))) == str(num) if isinstance(num, int) and num > -1 else "Not valid"
+
+def palindrome(num):
+    return ''.join(str(num)[::-1]) == str(num) if isinstance(num, int) and num > -1 else "Not valid"
 
 
 Test.assert_equals(palindrome(1221), True)
