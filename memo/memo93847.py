@@ -9,12 +9,13 @@
 import random
 import collections
 
-bottle0 = [0 if i > 50 else 1 for i in range(1, 101)]
-b = collections.Counter(bottle0)
 
-for i in range(len(bottle0)):
-    rn = random.randint(0, len(bottle0) - 1)
-    bottle0[i], bottle0[rn] = bottle0[rn], bottle0[i]
+def make_suffle_bottle():
+    arr0 = [0 if i > 50 else 1 for i in range(1, 101)]
+    for i in range(len(arr0)):
+        rn = random.randint(0, len(arr0) - 1)
+        arr0[i], arr0[rn] = arr0[rn], arr0[i]
+    return arr0
 
 
 def pick(B, C):
@@ -25,15 +26,17 @@ def pick(B, C):
     cp = collections.Counter(pick)
     return cp
 
-
-print(pick(bottle0, 10))
-print(pick(bottle0, 100000))
+# print(collections.Counter(make_suffle_bottle()))
 
 
-import math
-print(6 * math.sin(math.radians(50)))
-print(5 * math.tan(math.radians(65)))
+print(pick(make_suffle_bottle(), 10))
+print(pick(make_suffle_bottle(), 100000))
 
-import math
-print(5 / math.cos(math.radians(65)))
-print(math.sqrt((5**2) + ((5 * math.tan(math.radians(65)))**2)))
+
+# import math
+# print(6 * math.sin(math.radians(50)))
+# print(5 * math.tan(math.radians(65)))
+#
+# import math
+# print(5 / math.cos(math.radians(65)))
+# print(math.sqrt((5**2) + ((5 * math.tan(math.radians(65)))**2)))
