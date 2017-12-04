@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # print(get_base169(15.4))
     # print(get_base169(40))
     # print(get_base169(48))
-    print(get_base169(65))
+    # print(get_base169(65))
 
     # print(get_base_1610(15.4))
     # print(get_base_1610(40))
