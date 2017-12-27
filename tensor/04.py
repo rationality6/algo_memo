@@ -25,3 +25,9 @@ for step in range(2001):
 
     if step % 20 == 0:
         print(step, cost_val, W_val)
+
+import math
+import matplotlib.pyplot as plt
+plt.plot([*map(lambda x: math.sin(math.radians(x)), [*range(900)])])
+plt.plot([*map(lambda x: math.cos(math.radians(x)), [*range(900)])])
+plt.show()
