@@ -1,6 +1,6 @@
 class Test {
   assert_equals(anwser_func, anwser) {
-    console.log(anwser_func == anwser)
+    console.log(anwser_func === anwser)
   }
 }
 

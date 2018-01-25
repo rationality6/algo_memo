@@ -9,3 +9,11 @@ def bubble(L):
 arr0 = [*reversed(range(0, 10))]
 print(arr0)
 print(bubble(arr0))
+
+
+def foobar(L):
+    return L
+
+list0 = [*range(10)]
+
+print(foobar(list0))
