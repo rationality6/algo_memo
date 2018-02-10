@@ -30,13 +30,5 @@ Test.it('STATIC TESTS')
 Test.assert_equals(interest(100, 0.1, 1), [110, 110])
 # Test.assert_equals(interest(100, 0.1, 2), [120, 121])
 
-print(len([i for i in range(1, 101) if i % 3 == 0 or i % 2 == 0]))
-
-
-def func0(x):
-    return x**2 if x % 2 == 0 else x + 5
-print(func0(2))
-print(func0(3))
-
-print(100*1.1**12)
-print(100+100*0.1*12)
+print(100 * 1.1**12)
+print(100 + 100 * 0.1 * 12)
