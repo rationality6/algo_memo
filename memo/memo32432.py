@@ -46,6 +46,7 @@ def get_components_from_mag(p_mag, p_deg):
     import math
     x = p_mag * math.sin(p_deg)
     y = p_mag * math.cos(p_deg)
-    print(math.round(x,2), y)
+    print(math.round(x, 2), y)
+
 
 get_components_from_mag(12, 20)
