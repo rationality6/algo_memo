@@ -1,49 +1,88 @@
 const https = require('https');
 
-const httpsGet = (url) => {
+const httpsGet = URI => {
   return new Promise(resolve => {
-    https.get(url, res => {
+    https.get(URI, res => {
       res.setEncoding('utf8')
+      let chunk = []
       res.on('data', body => {
-        body = JSON.parse(body)
-        resolve(body)
+        chunk += body
       })
+      res.on('end', () => resolve(JSON.parse(chunk)));
     })
   })
 }
 
-const getMovieTitles = async substr => {
-  const url = `https://jsonmock.hackerrank.com/api/movies/search/?Title=${substr}`
-  const body = await httpsGet(url)
-  const movieTitles = body.data.map(x => x.Title)
-  const totalPage = body.total_pages
-  return [url, movieTitles, totalPage]
-}
-
-const promiseWrap = async (substr, nextPage) => {
-  const url = substr + `&page=${nextPage}`
-  const body = await httpsGet(url)
-  const movies = body.data.map(x => x.Title)
-  return movies
-}
-
-const solution = async T => {
-  const res0 = await getMovieTitles(T)
-  const pageLength = res0[2]
-  let promiseJar = []
-
-  // Into jar
-  for (let i = 1; i < pageLength; i += 1) {
-    const numberRevise = i + 1
-    promiseJar.push(promiseWrap(res0[0], numberRevise))
+const _range = (START, END) => {
+  let jar = []
+  for (let i = START; i < END; i += 1) {
+    jar.push(i)
   }
-
-  // Concat and sorting
-  const res1 = await Promise.all(promiseJar)
-  const flattenArray = res1.reduce((a, b) => a.concat(b))
-  const resultSorted = res0[1].concat(flattenArray).sort()
-  console.log(resultSorted)
+  return jar
 }
 
-// solution('spiderman')
-solution('world')
+const queryURI = `https://jsonmock.hackerrank.com/api/movies/`
+
+const solution = (TITLE, URI) => {
+  const titleURI = URI + `search/?Title=${TITLE}`
+  return httpsGet(titleURI)
+    .then(i => {
+      return {
+        o: Promise.resolve(i),
+        totalPages: i.total_pages,
+      }
+    })
+    .then(({o,totalPages}) => {
+      return [o, ..._range(2, totalPages + 1).map(p => {
+        const withPageURI = titleURI + `&page=${p}`
+        return httpsGet(withPageURI)
+      })]
+    })
+    .then(j => Promise.all(j))
+    .then(k => [].concat(...k.map(k => k.data)))
+    .then(l => l.map(l => l.Title).sort())
+}
+
+
+solution('spiderman', queryURI)
+  .then(console.log)
+
+
+// const searchMovieDatas = async (TITLE, URI) => {
+//   const titleURI = URI + `search/?Title=${TITLE}`
+//   const body = await httpsGet(URI)
+//   return {
+//     movieTitles: body.data.map(x => x.Title),
+//     totalPage: body.total_pages,
+//     titleURI
+//   }
+// }
+//
+// const promiseWrapForNextPages = async (URI, nextPage) => {
+//   URI = URI + `&page=${nextPage}`
+//   const body = await httpsGet(URI)
+//   const movies = body.data.map(x => x.Title)
+//   return movies
+// }
+//
+// const solution = async (TITLE, URI) => {
+//   const resObj = await searchMovieDatas(TITLE, URI)
+//   const pageLength = resObj.totalPage
+//   let promiseJar = []
+//
+//   // Into the jar
+//   for (let i = 2; i <= pageLength; i += 1) {
+//     promiseJar.push(promiseWrapForNextPages(resObj.titleURI, i))
+//   }
+//
+//   // Concat and sorting
+//   const anotherMovieTitles = await Promise.all(promiseJar)
+//   const flattenArray = anotherMovieTitles.reduce((a, b) => a.concat(b))
+//   const resultSorted = resObj.movieTitles.concat(flattenArray).sort()
+//   console.log(resultSorted)
+// }
+//
+// const queryURI = `https://jsonmock.hackerrank.com/api/movies/`
+//
+// solution('spiderman', queryURI)
+// // solution('world', queryURI)
