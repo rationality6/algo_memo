@@ -7,15 +7,16 @@ void copy(char to[], char from[]);
 /* print longest input line */
 int main()
 {
-    int len; /* current line length */
-    int max; /* maximum length seen so far */
+    int len;               /* current line length */
+    int max;               /* maximum length seen so far */
     char line[MAXLINE];    /* current input line */
     char longest[MAXLINE]; /* longest line saved here */
 
     max = 0;
     while ((len = getline(line, MAXLINE)) > 0)
-        if (len > max) {
-            max =  len;
+        if (len > max)
+        {
+            max = len;
             copy(longest, line);
         }
 
@@ -28,9 +29,10 @@ int main()
 int getline(char s[], int lim)
 {
     int c, i;
-    for (i=O; i<lim-1 && (c=getchar())!=EOF && c!='\n'; ++i)
+    for (i = O; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
         s[i] = c;
-    if (c == '\n') {
+    if (c == '\n')
+    {
         s[i] = c;
         ++i;
     }

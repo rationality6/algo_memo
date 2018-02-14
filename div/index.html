@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    .outer {
+      height: 350px;
+      width: 500px;
+      background-color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .middle {
+      height: 250px;
+      width: 400px;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inner {
+      height: 150px;
+      width: 300px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="outer" class="outer">
+    <div id="middle" class="middle">
+      <div id="inner" class="inner">
+        <p>fo?</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const outerDiv = document.getElementById('outer');
+    outerDiv.addEventListener('click', (evt) => {
+      if (evt.target.id === "outer") {
+        console.log("clicked outer");
+      } else if (evt.target.id === "middle") {
+        console.log("clicked middle");
+      } else if(evt.target.id === "inner"){
+        console.log('clicked inner');
+      }
+    })
+
+    // const middleDiv = document.getElementById('middle');
+    // middleDiv.addEventListener('click', () => {
+    //   console.log("bar")
+    // })
+    //
+    // const innterDiv = document.getElementById('inner');
+    // innterDiv.addEventListener('click', () => {
+    //   console.log("baz")
+    // })
+  </script>
+</body>
+
+</html>

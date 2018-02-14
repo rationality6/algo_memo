@@ -56,6 +56,7 @@ print(['a', 'b'][-1])
 
 
 def maxDifference(a):
+    a = a[1:]
     answer = -1
     for i in range(1, len(a)):
         for j in range(0, i):
@@ -67,9 +68,11 @@ def maxDifference(a):
 
 
 # list0 = [7, 2, 3, 10, 2, 4, 8, 1]
-list0 = [6, 7, 9, 5, 6, 3, 2]
+# list0 = [6, 7, 9, 5, 6, 3, 2]
+list0 = [5, 10, 8, 7, 6, 5]
 
 print(maxDifference(list0))
+
 
 
 if __name__ == "__main__":
