@@ -1,32 +1,30 @@
 const https = require('https');
 
-const getMovieTitles = substr => {
+const httpsGet = (url) => {
   return new Promise(resolve => {
-    const url = 'https://jsonmock.hackerrank.com/api/movies/search/?Title=' + substr
     https.get(url, res => {
       res.setEncoding('utf8')
       res.on('data', body => {
         body = JSON.parse(body)
-        const movies = body.data.map(x => x.Title)
-        const totalPage = body.total_pages
-        resolve([substr, movies, totalPage])
+        resolve(body)
       })
     })
   })
 }
 
-const promiseWrap = (substr, nextPage) => {
-  return new Promise(resolve => {
-    let url1 = 'https://jsonmock.hackerrank.com/api/movies/search/?Title=' + substr + "&page=" + nextPage;
-    https.get(url1, res => {
-      res.setEncoding('utf8');
-      res.on('data', body => {
-        body = JSON.parse(body)
-        const movies = body.data.map(x => x.Title)
-        resolve(movies)
-      })
-    })
-  })
+const getMovieTitles = async substr => {
+  const url = `https://jsonmock.hackerrank.com/api/movies/search/?Title=${substr}`
+  const body = await httpsGet(url)
+  const movies = body.data.map(x => x.Title)
+  const totalPage = body.total_pages
+  return ([substr, movies, totalPage])
+}
+
+const promiseWrap = async (substr, nextPage) => {
+  let url = `https://jsonmock.hackerrank.com/api/movies/search/?Title=${substr}&page=${nextPage}`
+  const body = await httpsGet(url)
+  const movies = body.data.map(x => x.Title)
+  return movies
 }
 
 const solution = async T => {
