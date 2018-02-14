@@ -192,10 +192,64 @@ def solver(L):
     answer = []
     for x in range(2, len(L)):
         for y in range(2, len(L)):
-            answer.append(sum([L[x - 2][y - 2], L[x - 2][y - 1], L[x - 2][y],
-                               L[x - 1][y - 1],
-                               L[x][y - 2], L[x][y - 1], L[x][y]]))
+            hourglasses_array = [
+                L[x - 2][y - 2], L[x - 2][y - 1], L[x - 2][y],
+                L[x - 1][y - 1],
+                L[x][y - 2], L[x][y - 1], L[x][y]
+            ]
+            answer.append(sum(hourglasses_array))
     return max(answer)
 
 
 print(solver(matrix))
+
+
+def solution(N, L):
+    for i in range(len(N)):
+        print(i)
+
+
+a0 = [1, 20]
+a1 = [120, 130]
+
+solution(a0)
+
+
+for i in range(2):
+    print(i)
+
+
+print(float(3 / 9))
+print(float(3 / 9))
+
+a = input()
+
+
+s = 'HackerRank '
+c = 'is the best place to learn and practice coding!'
+print(s + c)
+
+print(*map(lambda x: type(x), [*map(str, [1, 2, 3, 4])]))
+[1, 2, 3, 4, 5]
+[...]
+
+
+def solve(grades):
+    result = []
+    for i in grades:
+        if i >= 38:
+            if i % 5 >= 3:
+                i += 5 - i % 5
+
+        result.append(i)
+    return result
+
+
+arr = [73, 67, 38, 33]
+
+print(solve(arr))
+
+
+range(32)
+
+print("            73  ".strip())
