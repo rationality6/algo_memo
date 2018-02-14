@@ -15,13 +15,13 @@ const httpsGet = (url) => {
 const getMovieTitles = async substr => {
   const url = `https://jsonmock.hackerrank.com/api/movies/search/?Title=${substr}`
   const body = await httpsGet(url)
-  const movies = body.data.map(x => x.Title)
+  const movieTitles = body.data.map(x => x.Title)
   const totalPage = body.total_pages
-  return ([substr, movies, totalPage])
+  return [url, movieTitles, totalPage]
 }
 
 const promiseWrap = async (substr, nextPage) => {
-  let url = `https://jsonmock.hackerrank.com/api/movies/search/?Title=${substr}&page=${nextPage}`
+  const url = substr + `&page=${nextPage}`
   const body = await httpsGet(url)
   const movies = body.data.map(x => x.Title)
   return movies
@@ -45,4 +45,5 @@ const solution = async T => {
   console.log(resultSorted)
 }
 
-solution('spiderman')
+// solution('spiderman')
+solution('world')
