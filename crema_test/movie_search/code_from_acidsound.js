@@ -1,4 +1,4 @@
-// A code from acidsound
+// A code from Acidsound
 const _range = (start,end)=> {
   let range=[];
   for (let i=start; i<end; i++) range.push(i);
