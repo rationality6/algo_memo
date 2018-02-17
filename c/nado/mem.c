@@ -2,15 +2,10 @@
 #include <stdio.h>
 #include <time.h>
 
-void function_without_params()
-{
-  printf("without params!");
-}
-
 int random_gen(int t)
 {
   srand(t);
-  int random_number = rand();
+  int random_number = rand() % 3 == 0;
   return random_number % 3;
 }
 
@@ -33,8 +28,6 @@ int main()
   printf("ff %d ff \n", val);
   printf("%d", subtract(10, 5));
   printf("%d", subtract(9, 2));
-
-  function_without_params();
 
   return 0;
 }

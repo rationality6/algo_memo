@@ -26,7 +26,7 @@ void sorting(int arr[])
 
 int main()
 {
-  // int balance[] = {6, 5, 38, 1, 332, 3};
+  int balance[] = {6, 5, 38, 1, 332, 3};
   // // printf("%0.2f \n", getAverage(balance, 6));
   // int sort_array[] = {5, 4, 3, 2, 1};
   // // printf("%ld", LEN(sort_array));
@@ -53,7 +53,7 @@ int main()
 
   // printf("Sorted list in ascending order:\n");
 
-  for (c = 0; c < n; c++)
+  for (int c = 0; c < n; c++)
   {
     printf("%d\n", array[c]);
   }
