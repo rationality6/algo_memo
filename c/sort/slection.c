@@ -5,10 +5,13 @@ void swap(int *, int *);
 
 int main()
 {
-  int arr0[] = {5, 4, 3, 2, 1};
+  int arr0[] = {9, 8, 6, 5, 4, 3, 2, 1, 0};
   int size = sizeof(arr0) / sizeof(arr0[0]);
 
   selection(arr0, size);
+
+  for (int i = 0; i < size; i++)
+    printf("%d", arr0[i]);
 
   return 0;
 }
@@ -18,7 +21,6 @@ void selection(int arr[], int size)
   for (int i = 0; i < size; i++)
   {
     int index = i;
-    int temp;
     for (int j = i + 1; j < size; j++)
     {
       if (arr[j] < arr[index])
@@ -28,9 +30,6 @@ void selection(int arr[], int size)
     }
     swap(&arr[i], &arr[index]);
   }
-
-  for (int i = 0; i < size; i++)
-    printf("%d", arr[i]);
 }
 
 void swap(int *a, int *b)

@@ -2,7 +2,6 @@
 
 // void bubble_sort(int arr[], int count)
 // {
-//   int temp;
 //   for (int i = 1; i < count; i++)
 //   {
 //     for (int j = 0; j < count - i; j++)
@@ -43,12 +42,14 @@ int main()
 
   bubble_sort(array0, size);
 
+  for (int i = 0; i < size; i++)
+    printf("%d", array0[i]);
+
   return 0;
 }
 
 void bubble_sort(int arr[], int size)
 {
-  int temp;
   for (int i = 1; i < size; i++)
   {
     for (int j = 0; j < size - i; j++)
@@ -59,8 +60,6 @@ void bubble_sort(int arr[], int size)
       }
     }
   }
-  for (int i = 0; i < size; i++)
-    printf("%d", arr[i]);
 }
 
 void swap(int *a, int *b)

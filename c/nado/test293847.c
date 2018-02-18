@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main(void){
-  printf("Hellowlrd");
-  printf("Hellowlrd \a");
+  printf("Hellowlrd \n");
+  printf("Hellowlrd \n");
   return 0;
 }
+
