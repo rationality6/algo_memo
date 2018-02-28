@@ -25,3 +25,19 @@ const cutRod = (price, n) => {
 // console.log(cutRod(stick_price, 3)); // 8
 console.log(cutRod(stick_price, 4)); // 10
 // console.log(cutRod(stick_price, 7)); // 18
+
+
+var value = 100;
+var myObj = {
+  value: 1,
+  func1() {
+    console.log(`func1's this.value: ${this.value}`);
+
+    var func2 = function() {
+      console.log(`func2's this.value ${this.value}`);
+    }.bind(this);
+    func2();
+  }
+};
+
+myObj.func1();

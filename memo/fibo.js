@@ -1,9 +1,9 @@
 const fibo = n => {
-  arr = [];
-  a = 0;
-  b = 1;
+  let arr = [];
+  let a = 0;
+  let b = 1;
   while (arr.length < n) {
-    temp = a;
+    let temp = a;
     a = b;
     b = temp + b;
     arr.push(a);
@@ -21,4 +21,9 @@ const fibo = n => {
   }
 };
 
-arr = [1, 2, 3];
+let arr = [1, 2, 3];
+
+const foobar = n => {
+  return n
+}
+foobar("Hello world")
