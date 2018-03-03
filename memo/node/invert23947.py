@@ -22,9 +22,11 @@ root0 = init_tree()
 def preorder_traverse(tree):
     if tree == None:
         return
-    print(tree.data)
+    # print(tree.data)
     preorder_traverse(tree.left)
+    # print(tree.data)
     preorder_traverse(tree.right)
+    print(tree.data)
 
 
 def inorder_traverse(tree):
@@ -67,9 +69,9 @@ def levelorder_traverse(tree):
             levelq.append(visit_node.right)
 
 
-# preorder_traverse(root0)
+preorder_traverse(root0)
 # inorder_traverse(root0)
 # postorder_traverse(root0)
 # levelorder_traverse(root0)
-inverted_root = invert(root0)
-levelorder_traverse(inverted_root)
+# inverted_root = invert(root0)
+# levelorder_traverse(inverted_root)

@@ -21,16 +21,12 @@ def partition(alist):
 
 
 def quicksort(L, S, E):
-    if S < E
+    if S < E:
         pivot = partition(L)
         first_part = quicksort(alist[:i])
         second_part = quicksort(alist[i + 1:])
         first_part.append(alist[i])
-        return first_part + second_part
-
-
-def test():
-    pass
+    return first_part + second_part
 
 
 if __name__ == "__main__":
