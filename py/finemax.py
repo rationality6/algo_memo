@@ -13,4 +13,4 @@ def twoSum(self, nums, target):
                 return i, j
 
 
-twoSum(1,2,3)
+twoSum(1, 2, 3)
