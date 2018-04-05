@@ -74,6 +74,17 @@ class LinkedList(object):
             print("%d " % actual_node.data)
             actual_node = actual_node.next_node
 
+    def recursive_travorse(self):
+        head = self.head
+
+        def recur(head):
+            if head == None:
+                return
+            else:
+                print(head.data)
+                return recur(head.next_node)
+        recur(head)
+
 
 linked_list = LinkedList()
 
@@ -81,7 +92,8 @@ linked_list.insert_start(1)
 linked_list.insert_start(2)
 linked_list.insert_start(3)
 
-linked_list.insert_end(321)
+# linked_list.insert_end(321)
 
-linked_list.traverse_list()
+# linked_list.traverse_list()
+linked_list.recursive_travorse()
 # print(linked_list.size1())

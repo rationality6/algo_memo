@@ -35,3 +35,8 @@ queue0.enqueue(2)
 queue0.enqueue(3)
 
 print(reverse_queue("apple"))
+
+
+class Queue:
+    def __init__(self):
+        self.items = []
