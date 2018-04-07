@@ -50,4 +50,4 @@ const arg = [{ name: 'Lee' }, { name: 'Kim' }, { name: 'Park' }]
 const reversed = reverse(arg)
 console.log(reversed)
 
-reversed.push({name:33})
+// reversed.push({name:33})
